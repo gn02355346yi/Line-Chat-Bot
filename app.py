@@ -46,9 +46,9 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "拍孤兒怨"),ImageSendMessage(original_content_url='https://pic.pimg.tw/boxout/1424621892-2067594777.jpg?v=1424621893',
     preview_image_url='https://pic.pimg.tw/boxout/1424621892-2067594777.jpg?v=1424621893')])
     elif any(x in message for x in ["你好", "妳好", "嗨"]):
-        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你好!" + " 要來參加 Appreciation Day 活動喔～"),StickerSendMessage(package_id = '3', sticker_id = '1')])
+        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你好!" + " 要來參加 Appreciation Day 活動喔～"),StickerSendMessage(package_id = '3', sticker_id = '134')])
     elif any(x in message for x in ["幹嘛", "目的", "做什麼", "做啥"]):
-        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你好!" + " 我是來宣傳 Appreciation Day 活動的喔～"),StickerSendMessage(package_id = '3', sticker_id = '1')])
+        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你好!" + " 我是來宣傳 Appreciation Day 活動的喔～"),StickerSendMessage(package_id = '3', sticker_id = '134')])
 
 
 import os
