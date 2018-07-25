@@ -33,16 +33,20 @@ def callback():
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    #message = TextSendMessage(text=event.message.text)
-    #if event.source.user_id = "Ines"
+    message = event.message.text
     ID = event.source.user_id
     profile = line_bot_api.get_profile(ID)
-    if "地點" in event.message.text:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "九樓"))
+    if "地點" in message:
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "地點在九樓喔！"))
+    elif "時間" in message:
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "時間是 8/10 下午四點喔！"))    
+    elif any(x in message for x in ["你", "是誰", "名字","叫什麼"]):
+        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "你好~ 我是帥哥道儒"),StickerSendMessage(package_id = '3', sticker_id = '124')] )      
     elif profile.display_name == "Ines":
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = profile.display_name + "拍孤兒怨"))
     else:
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你好!"),StickerSendMessage(package_id = '3', sticker_id = '1')])
+
 import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
