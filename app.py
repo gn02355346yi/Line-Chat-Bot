@@ -36,7 +36,8 @@ def handle_message(event):
     message = TextSendMessage(text=event.message.text)
     if "地點" in str(message):
         line_bot_api.reply_message(event.reply_token, text = "酒樓")
-
+    else:
+        line_bot_api.reply_message(event.reply_token, text = "12樓")
 import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
