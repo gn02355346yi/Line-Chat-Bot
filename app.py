@@ -36,9 +36,9 @@ def handle_message(event):
     message = event.message.text
     ID = event.source.user_id
     profile = line_bot_api.get_profile(ID)
-    if "地點" in message:
+    if any(x in message for x in ["地點", "哪裡"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "地點在九樓喔！"))
-    elif "時間" in message:
+    elif any(x in message for x in ["時間", "幾點"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "時間是 8/10 下午四點喔！"))    
     elif any(x in message for x in ["你是誰", "你叫什麼", "名字"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "你好~ 我是帥哥道儒 想跟我說話的話要先加我好友喔！"),StickerSendMessage(package_id = '3', sticker_id = '124')] )      
@@ -47,8 +47,10 @@ def handle_message(event):
     preview_image_url='https://pic.pimg.tw/boxout/1424621892-2067594777.jpg?v=1424621893')])
     elif any(x in message for x in ["你好", "妳好", "嗨"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你好!" + " 要來參加 Appreciation Day 活動喔～"),StickerSendMessage(package_id = '3', sticker_id = '134')])
-    elif any(x in message for x in ["幹嘛", "目的", "做什麼", "做啥"]):
+    elif any(x in message for x in ["來幹嘛", "目的", "做什麼", "做啥"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你好!" + " 我是來宣傳 Appreciation Day 活動的喔～"),StickerSendMessage(package_id = '3', sticker_id = '134')])
+    elif any(x in message for x in ["要幹嘛", "內容", "活動"]):
+        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "吃吃喝喝有吃有拿喔！ 還有Intern們拍的精彩影片～"),StickerSendMessage(package_id = '3', sticker_id = '134')])
 
 
 import os
