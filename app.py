@@ -43,9 +43,11 @@ def handle_message(event):
     elif any(x in message for x in ["你", "是誰", "名字","叫什麼"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "你好~ 我是帥哥道儒"),StickerSendMessage(package_id = '3', sticker_id = '124')] )      
     elif profile.display_name == "Ines":
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = profile.display_name + "拍孤兒怨"))
+        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "拍孤兒怨"),ImageSendMessage(original_content_url='https://pic.pimg.tw/boxout/1424621892-2067594777.jpg?v=1424621893',
+    preview_image_url='https://pic.pimg.tw/boxout/1424621892-2067594777.jpg?v=1424621893')])
     else:
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你好!"),StickerSendMessage(package_id = '3', sticker_id = '1')])
+
 
 import os
 if __name__ == "__main__":
