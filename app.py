@@ -43,9 +43,12 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "時間是 8/10 下午四點喔！"))    
     elif any(x in message for x in ["你是誰", "你叫什麼", "名字"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "你好~ 我是帥哥道儒 想跟我說話的話要先加我好友喔！"),StickerSendMessage(package_id = '3', sticker_id = '124')] )      
-    elif "Ines" in message:
+    elif "Ines" or "ines" in message:
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "Ines在拍孤兒怨續集喔！"),ImageSendMessage(original_content_url='https://pic.pimg.tw/boxout/1424621892-2067594777.jpg?v=1424621893',
     preview_image_url='https://pic.pimg.tw/boxout/1424621892-2067594777.jpg?v=1424621893')])
+    elif "Daniel" or "daniel" in message:
+        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "Daniel在賣手錶喔！"),ImageSendMessage(original_content_url='https://cc.tvbs.com.tw/news3.0/tvbs/news/entertainment/images/2015/11/06/2.jpg?__scale=h:441,w:662,cx:3,cy:0,ch:437,cw:659',
+    preview_image_url='https://cc.tvbs.com.tw/news3.0/tvbs/news/entertainment/images/2015/11/06/2.jpg?__scale=h:441,w:662,cx:3,cy:0,ch:437,cw:659')])
     elif any(x in message for x in ["你好", "妳好", "嗨"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你好!" + " 要來參加 Appreciation Day 活動喔～"),StickerSendMessage(package_id = '3', sticker_id = '134')])
     elif any(x in message for x in ["來幹嘛", "目的", "做什麼", "做啥"]):
