@@ -40,8 +40,8 @@ def handle_message(event):
     if "地點" in event.message.text:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "九樓"))
     else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = profile.user_id))
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = profile.display_name))
+        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.user_id),TextSendMessage(text = profile.display_name)])
+
 import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
