@@ -50,8 +50,8 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "Daniel在賣手錶喔！"),ImageSendMessage(original_content_url='https://cc.tvbs.com.tw/news3.0/tvbs/news/entertainment/images/2015/11/06/2.jpg?__scale=h:441,w:662,cx:3,cy:0,ch:437,cw:659',
     preview_image_url='https://cc.tvbs.com.tw/news3.0/tvbs/news/entertainment/images/2015/11/06/2.jpg?__scale=h:441,w:662,cx:3,cy:0,ch:437,cw:659')])
     elif any(x in message for x in ["Lawrence", "lawrence", "羅倫斯"]):
-        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "Lawrence在佛羅倫斯喔"),ImageSendMessage(original_content_url='http://grinews.com/news/wp-content/uploads/2016/01/%E4%BD%9B%E7%BE%85%E5%80%AB%E6%96%AF001.jpg',
-    preview_image_url='http://grinews.com/news/wp-content/uploads/2016/01/%E4%BD%9B%E7%BE%85%E5%80%AB%E6%96%AF001.jpg')])    
+        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "Lawrence在佛羅倫斯喔"),ImageSendMessage(original_content_url='https://img.appledaily.com.tw/images/ReNews/20150622/640_a31496282a31c58a46c19028b9a28ed7.jpg',
+    preview_image_url='https://img.appledaily.com.tw/images/ReNews/20150622/640_a31496282a31c58a46c19028b9a28ed7.jpg')])    
     elif any(x in message for x in ["你好", "妳好", "嗨"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你好!" + " 要來參加 Appreciation Day 活動喔～"),StickerSendMessage(package_id = '3', sticker_id = '134')])
     elif any(x in message for x in ["來幹嘛", "目的", "做什麼", "做啥"]):
