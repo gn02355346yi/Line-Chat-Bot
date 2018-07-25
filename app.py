@@ -39,7 +39,7 @@ def handle_message(event):
     profile = line_bot_api.get_profile(ID)
     if "地點" in event.message.text:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "九樓"))
-    elif profile.display_name = "Ines":
+    elif profile.display_name == "Ines":
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = profile.display_name + "拍孤兒怨"))
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = profile.display_name + "你好!"))
