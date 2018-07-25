@@ -34,7 +34,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     message = TextSendMessage(text=event.message.text)
-    if "地點" in message:
+    if "地點" in str(message):
         line_bot_api.reply_message(event.reply_token, text = "酒樓")
 
 import os
