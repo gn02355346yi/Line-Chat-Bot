@@ -35,12 +35,12 @@ def callback():
 def handle_message(event):
     #message = TextSendMessage(text=event.message.text)
     #if event.source.user_id = "Ines"
-
+    profile = line_bot_api.get_profile(event.source.user_id)
     if "地點" in event.message.text:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "九樓"))
     else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = event.source.display_Name))
-
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = event.source.display_name))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = profile))
 import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
