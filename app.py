@@ -33,6 +33,7 @@ def callback():
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    gag = {"衛斯理是誰" : "衛斯理是元介", "馬首姓什麼":"詹, 馬首是詹"}
     message = event.message.text
     ID = event.source.user_id
     profile = line_bot_api.get_profile(ID)
@@ -51,8 +52,8 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你好!" + " 我是來宣傳 Appreciation Day 活動的喔～"),StickerSendMessage(package_id = '3', sticker_id = '134')])
     elif any(x in message for x in ["要幹嘛", "內容", "活動"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "吃吃喝喝有吃有拿喔！ 還有Intern們拍的精彩影片～"),StickerSendMessage(package_id = '3', sticker_id = '134')])
-    elif message == "衛斯理是誰":
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "衛斯理是元介"))  
+    elif message in gag:
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = gag[message]))  
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = message + "你大頭啦"))         
 import os
