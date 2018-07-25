@@ -42,7 +42,7 @@ def handle_message(event):
     elif profile.display_name == "Ines":
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = profile.display_name + "拍孤兒怨"))
     else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = profile.display_name + "你好!"))
+        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你好!"),StickerSendMessage(package_id = '3', sticker_id = '1')])
 import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
