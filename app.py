@@ -59,9 +59,9 @@ def handle_message(event):
     elif any(x in message for x in ["要幹嘛", "內容", "活動"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "吃吃喝喝有吃有拿喔！ 還有Intern們拍的精彩影片～"),StickerSendMessage(package_id = '3', sticker_id = '134')])
     elif message in gag:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = gag[message]))  
-    else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = message + "你大頭啦"))         
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = gag[message])) 
+ 
+            
 import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
