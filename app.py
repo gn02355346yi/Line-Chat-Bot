@@ -39,11 +39,16 @@ def handle_message(event):
     message = event.message.text
     ID = event.source.user_id
     profile = line_bot_api.get_profile(ID)
-    if any(x in message for x in ["地點", "哪裡", "住哪","在哪","哪"]):
+    if any(x in message for x in ["地點", "哪裡", "住哪","在哪"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "在九樓喔！"))
 
     elif any(x in message for x in ["幾歲", "年紀", "年齡","貴庚"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "五十歲！！"))   
+
+    elif any(x in message for x in ["誰辦", "主辦人","主持人"]):
+        line_bot_api.reply_message(event.reply_token, [ImageSendMessage(original_content_url='https://i.imgur.com/lIZYmaX.png',
+    preview_image_url='https://i.imgur.com/lIZYmaX.png'),ImageSendMessage(original_content_url='https://cc.tvbs.com.tw/news3.0/tvbs/news/entertainment/images/2015/11/06/2.jpg?__scale=h:441,w:662,cx:3,cy:0,ch:437,cw:659',
+    preview_image_url='https://cc.tvbs.com.tw/news3.0/tvbs/news/entertainment/images/2015/11/06/2.jpg?__scale=h:441,w:662,cx:3,cy:0,ch:437,cw:659')])
 
     elif any(x in message for x in ["時間", "幾點", "時候"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "時間是 8/10 中午12點喔！"))
@@ -51,7 +56,7 @@ def handle_message(event):
     elif any(x in message for x in ["獎品", "禮物", "紀念品"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "我們的禮物是秘密不能講明，就算我愛你也不能夠說明"))
             
-    elif any(x in message for x in ["你是誰", "你叫什麼", "名字"]):
+    elif any(x in message for x in ["你是誰", "你叫什麼", "名字","哪位"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "你好~ 我是蛋糕！"),StickerSendMessage(package_id = '3', sticker_id = '124')] )      
     
     elif any(x in message for x in ["Ines", "ines", "白庭安"]):
