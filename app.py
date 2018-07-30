@@ -8,6 +8,8 @@ from linebot.exceptions import (
 )
 from linebot.models import *
 
+import random
+
 app = Flask(__name__)
 
 # Channel Access Token
@@ -33,18 +35,21 @@ def callback():
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    gag = {"衛斯理是誰" : "衛斯理是元介", "馬首姓什麼":"詹, 馬首是詹"}
+    gag = {"衛斯理是誰" : "衛斯理是元介", "馬首姓什麼":"詹, 馬首是詹", "周玉蔻老了變什麼":"老coco"}
     message = event.message.text
     ID = event.source.user_id
     profile = line_bot_api.get_profile(ID)
-    if any(x in message for x in ["地點", "哪裡", "住哪"]):
+    if any(x in message for x in ["地點", "哪裡", "住哪","在哪","哪"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "在九樓喔！"))
+
+    elif any(x in message for x in ["幾歲", "年紀", "年齡","貴庚"]):
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "五十歲！！"))   
 
     elif any(x in message for x in ["時間", "幾點", "時候"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "時間是 8/10 中午12點喔！"))    
     
     elif any(x in message for x in ["你是誰", "你叫什麼", "名字"]):
-        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "你好~ 我是蛋糕 想跟我說話的話要先加我好友喔！"),StickerSendMessage(package_id = '3', sticker_id = '124')] )      
+        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "你好~ 我是蛋糕！"),StickerSendMessage(package_id = '3', sticker_id = '124')] )      
     
     elif any(x in message for x in ["Ines", "ines", "白庭安"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "Ines在拍孤兒怨續集喔！"),ImageSendMessage(original_content_url='https://i.imgur.com/lIZYmaX.png',
