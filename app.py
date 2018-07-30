@@ -40,7 +40,7 @@ def handle_message(event):
     if any(x in message for x in ["地點", "哪裡"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "地點在九樓喔！"))
     elif any(x in message for x in ["時間", "幾點", "時候"]):
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "時間是 8/10 下午四點喔！"))    
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "時間是 8/10 中午12點喔！"))    
     elif any(x in message for x in ["你是誰", "你叫什麼", "名字"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "你好~ 我是帥哥道儒 想跟我說話的話要先加我好友喔！"),StickerSendMessage(package_id = '3', sticker_id = '124')] )      
     elif any(x in message for x in ["Ines", "ines", "白庭安"]):
