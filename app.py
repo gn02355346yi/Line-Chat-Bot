@@ -56,6 +56,9 @@ def handle_message(event):
     elif any(x in message for x in ["時間", "幾點", "時候", "何時"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "時間是 8/10 中午12點喔！"))    
 
+    elif any(x in message for x in ["餐", "吃","餓"]):
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "提供來自木柵的友善企業-貓茶町的高級餐點！ 我是不會讓大家餓肚子的！"))
+
     elif any(x in message for x in ["獎品", "禮物", "紀念品"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "我們的禮物是秘密不能講明，就算我愛你也不能夠說明"))
             
@@ -78,11 +81,14 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你好!" + " 要來參加 Appreciation Day 活動喔～"),StickerSendMessage(package_id = '3', sticker_id = '134')])
     
     elif any(x in message for x in ["來幹嘛", "目的", "做什麼", "做啥"]):
-        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你好!" + " 我是來宣傳 Appreciation Day 活動的喔～"),StickerSendMessage(package_id = '3', sticker_id = '134')])
+        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你好!" + " 我是來宣傳 Appreciation Day 活動的喔～，主管們都很希望藉由這個活動感謝大家的辛勞！！"),StickerSendMessage(package_id = '3', sticker_id = '134')])
     
     elif any(x in message for x in ["要幹嘛", "內容", "活動"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "吃吃喝喝有吃有拿喔！ 還有Intern們拍的精彩影片～"),StickerSendMessage(package_id = '3', sticker_id = '134')])
     
+    elif any(x in message for x in ["笨", "傻", "奇怪", "蠢"]):
+        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你才是"),StickerSendMessage(package_id = '3', sticker_id = '134')])
+
     elif message in gag:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = gag[message])) 
  
