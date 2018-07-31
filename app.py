@@ -44,9 +44,9 @@ def handle_message(event):
     if any(x in message for x in ["地點", "哪裡", "住哪","在哪"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "在九樓喔！"))
 
-    elif message == "嗨Piece of Cake 跟大家打個招呼吧":
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "大家好，我是Piece of cake！ 一年一度的Appreciation Day即將要登場囉，感謝你們邀請我當特別嘉賓！！ 我是不隨便跟陌生人講話的，想跟我說話要先跟我變成好友喔~ "))
-        line_bot_api.push_message(event.source.group_id, [TextSendMessage(text='在這一個禮拜中，我會不定期的和大家進行互動，與我更合拍的人會有神秘的好康喔！'),StickerSendMessage(package_id = '3', sticker_id = '425')])
+    #elif message == "嗨Piece of Cake 跟大家打個招呼吧":
+    #    line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "大家好，我是Piece of cake！ 一年一度的Appreciation Day即將要登場囉，感謝你們邀請我當特別嘉賓！！ 我是不隨便跟陌生人講話的，想跟我說話要先跟我變成好友喔~ "))
+    #    line_bot_api.push_message(event.source.group_id, [TextSendMessage(text='在這一個禮拜中，我會不定期的和大家進行互動，與我更合拍的人會有神秘的好康喔！'),StickerSendMessage(package_id = '3', sticker_id = '425')])
 
     elif any(x in message for x in ["幾歲", "年紀", "年齡","貴庚"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "五十歲！！"))    
@@ -103,6 +103,13 @@ def handle_message(event):
 
     elif any(x in message for x in ["蛋糕", "size", "口味","大小"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "我是班蘭葉口味的，綠綠的，大概6吋，你有吃過嗎？？"))
+
+    elif any(x in message for x in ["Piece of cake", "piece of cake", "Piece of Cake"]):
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "我叫 Piece of Cake 因為大家很厲害，工作都是Piece of Cake!!"))
+
+    elif any(x in message for x in ["班蘭葉","斑蘭葉"]):
+        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "請看！"),ImageSendMessage(original_content_url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBu-7wlu1WqnfQQFmfwHMRY0Y21mihjcx18-cXGNWMpx_sI7cr',
+    preview_image_url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBu-7wlu1WqnfQQFmfwHMRY0Y21mihjcx18-cXGNWMpx_sI7cr')])
 
     elif message in gag:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = gag[message])) 
