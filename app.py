@@ -49,10 +49,7 @@ def handle_message(event):
         line_bot_api.push_message(event.source.group_id, [TextSendMessage(text='在這一個禮拜中，我會不定期的和大家進行互動，與我更合拍的人會有神秘的好康喔！'),StickerSendMessage(package_id = '3', sticker_id = '425')])
 
     elif any(x in message for x in ["幾歲", "年紀", "年齡","貴庚"]):
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "五十歲！！"))
-
-    elif any(x in message for x in ["蛋糕", "size", "口味","大小"]):
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "我是班蘭葉口味的，綠綠的，大概6吋，你有吃過嗎？？"))    
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "五十歲！！"))    
 
     elif any(x in message for x in ["Appreciation", "appreciation", "感謝","感恩"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "Appreciation Day 是主管們對員工表達感謝的日子喔！！ 很期待吧～"))        
@@ -100,6 +97,9 @@ def handle_message(event):
     
     elif any(x in message for x in ["笨", "傻", "奇怪", "蠢"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你才是"),StickerSendMessage(package_id = '3', sticker_id = '134')])
+
+    elif any(x in message for x in ["蛋糕", "size", "口味","大小"]):
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "我是班蘭葉口味的，綠綠的，大概6吋，你有吃過嗎？？"))
 
     elif message in gag:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = gag[message])) 
