@@ -104,7 +104,7 @@ def handle_message(event):
     elif any(x in message for x in ["吃蛋糕"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "你好殘忍！！"))
 
-    elif any(x in message for x in ["蛋糕", "size", "口味","大小"]):
+    elif any(x in message for x in ["size", "口味","大小"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "我是班蘭葉口味的，綠綠的，大概6吋，你有吃過嗎？？"))
 
     elif any(x in message for x in ["Piece of cake", "piece of cake", "Piece of Cake"]):
