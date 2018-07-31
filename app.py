@@ -52,10 +52,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "五十歲！！"))    
 
     elif any(x in message for x in ["細節", "活動內容"]):
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "8/10 中午12點, 地點在9樓, 準備空空的肚子跟滿滿的活力就可以囉！")) 
-
-    elif any(x in message for x in ["Appreciation", "appreciation", "感謝","感恩"]):
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "Appreciation Day 是主管們對員工表達感謝的日子喔！！ 很期待吧～"))        
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "8/10 中午12點, 地點在9樓, 準備空空的肚子跟滿滿的活力就可以囉！"))        
 
     elif any(x in message for x in ["誰辦", "主辦","主持", "mc"]):
         line_bot_api.reply_message(event.reply_token, [ImageSendMessage(original_content_url='https://i.imgur.com/lIZYmaX.png',
@@ -73,6 +70,9 @@ def handle_message(event):
 
     elif any(x in message for x in ["獎品", "禮物", "紀念品"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "我們的禮物是秘密不能講明，就算我愛你也不能夠說明"))
+
+    elif any(x in message for x in ["Appreciation", "appreciation", "感謝","感恩"]):
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "Appreciation Day 是主管們對員工表達感謝的日子喔！！ 很期待吧～")) 
             
     elif any(x in message for x in ["你是誰", "你叫什麼", "名字","哪位"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "你好~ 我是蛋糕！"),StickerSendMessage(package_id = '3', sticker_id = '124')] )      
