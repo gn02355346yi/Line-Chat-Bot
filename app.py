@@ -42,6 +42,9 @@ def handle_message(event):
     if any(x in message for x in ["地點", "哪裡", "住哪","在哪"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "在九樓喔！"))
 
+    elif message == "嗨Piece of Cake 跟大家打個招呼吧":
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "大家好，我是Piece of cake！ 一年一度的Appreciation Day即將要登場囉，感謝你們邀請我當特別嘉賓！！ 我是不隨便跟陌生人講話的，想跟我說話，問我問題的話，要先跟我變成好友喔(cony kiss) 大家有不清楚的細節的話，記得要問我，我會很耐心的回答大家(moon grin)(moon grin) 只有一個小小的要求，我剛學中文兩天,話聽不懂不要罵我～(half dead)(half dead)"))
+
     elif any(x in message for x in ["幾歲", "年紀", "年齡","貴庚"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "五十歲！！"))   
 
