@@ -110,6 +110,9 @@ def handle_message(event):
     elif any(x in message for x in ["Piece of cake", "piece of cake", "Piece of Cake"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "我叫 Piece of Cake 因為大家很厲害，工作都是Piece of Cake!!"))
 
+    elif any(x in message for x in ["錯了"]):
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "對不起，窩歪鍋仁，中文不好")) 
+
     elif any(x in message for x in ["班蘭葉","斑蘭葉"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "請看！"),ImageSendMessage(original_content_url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBu-7wlu1WqnfQQFmfwHMRY0Y21mihjcx18-cXGNWMpx_sI7cr',
     preview_image_url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBu-7wlu1WqnfQQFmfwHMRY0Y21mihjcx18-cXGNWMpx_sI7cr')])
