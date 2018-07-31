@@ -51,6 +51,9 @@ def handle_message(event):
     elif any(x in message for x in ["幾歲", "年紀", "年齡","貴庚"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "五十歲！！"))
 
+    elif any(x in message for x in ["蛋糕", "size", "口味","大小"]):
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "我是班蘭葉口味的，綠綠的，大概6吋，你有吃過嗎？？"))    
+
     elif any(x in message for x in ["Appreciation", "appreciation", "感謝","感恩"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "Appreciation Day 是主管們對員工表達感謝的日子喔！！ 很期待吧～"))        
 
