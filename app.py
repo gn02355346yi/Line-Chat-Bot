@@ -46,7 +46,7 @@ def handle_message(event):
 
     elif message == "嗨Piece of Cake 跟大家打個招呼吧":
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "大家好，我是Piece of cake！ 一年一度的Appreciation Day即將要登場囉，感謝你們邀請我當特別嘉賓！！ 我是不隨便跟陌生人講話的，想跟我說話要先跟我變成好友喔~ "))
-        line_bot_api.push_message(event.source.group_id, [TextSendMessage(text='在這一個禮拜中，我會不定期的和大家進行互動，與我更合拍的人會有神秘的好康'),StickerSendMessage(package_id = '3', sticker_id = '425')])
+        line_bot_api.push_message(event.source.group_id, [TextSendMessage(text='在這一個禮拜中，我會不定期的和大家進行互動，與我更合拍的人會有神秘的好康喔！'),StickerSendMessage(package_id = '3', sticker_id = '425')])
 
     elif any(x in message for x in ["幾歲", "年紀", "年齡","貴庚"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "五十歲！！"))   
