@@ -49,7 +49,10 @@ def handle_message(event):
         line_bot_api.push_message(event.source.group_id, [TextSendMessage(text='在這一個禮拜中，我會不定期的和大家進行互動，與我更合拍的人會有神秘的好康喔！'),StickerSendMessage(package_id = '3', sticker_id = '425')])
 
     elif any(x in message for x in ["幾歲", "年紀", "年齡","貴庚"]):
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "五十歲！！"))   
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "五十歲！！"))
+
+    elif any(x in message for x in ["Appreciation", "appreciation", "感謝","感恩"]):
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "Appreciation Day 是主管們對員工表達感謝的日子喔！！ 很期待吧～"))        
 
     elif any(x in message for x in ["誰辦", "主辦","主持", "mc"]):
         line_bot_api.reply_message(event.reply_token, [ImageSendMessage(original_content_url='https://i.imgur.com/lIZYmaX.png',
