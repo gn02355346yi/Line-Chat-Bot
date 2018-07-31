@@ -83,7 +83,7 @@ def handle_message(event):
     #    line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "Lawrence在佛羅倫斯喔"),ImageSendMessage(original_content_url='https://img.appledaily.com.tw/images/ReNews/20150622/640_a31496282a31c58a46c19028b9a28ed7.jpg',
     #preview_image_url='https://img.appledaily.com.tw/images/ReNews/20150622/640_a31496282a31c58a46c19028b9a28ed7.jpg')])    
     
-    elif any(x in message for x in ["你好", "妳好", "嗨", "安安","Hi","hi","hello","Hello"]):
+    elif any(x in message for x in ["你好", "妳好", "嗨", "安安","Hi","hi","hello","Hello","哈囉"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你好!" + " 要來參加 Appreciation Day 活動喔～"),StickerSendMessage(package_id = '3', sticker_id = '134')])
     
     elif any(x in message for x in ["來幹嘛", "目的", "做什麼", "做啥"]):
