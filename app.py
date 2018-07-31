@@ -45,7 +45,8 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "在九樓喔！"))
 
     elif message == "嗨Piece of Cake 跟大家打個招呼吧":
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "大家好，我是Piece of cake！ 一年一度的Appreciation Day即將要登場囉，感謝你們邀請我當特別嘉賓！！ 我是不隨便跟陌生人講話的，想跟我說話，問我問題的話，要先跟我變成好友喔~ 大家有不清楚的細節的話，記得要問我，我會很耐心的回答大家. 只有一個小小的要求，我剛學中文兩天,話聽不懂不要罵我～"))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "大家好，我是Piece of cake！ 一年一度的Appreciation Day即將要登場囉，感謝你們邀請我當特別嘉賓！！ 我是不隨便跟陌生人講話的，想跟我說話要先跟我變成好友喔~ "))
+        line_bot_api.push_message("Caaa7f48f936db6bfabce11425fbb2eec", TextSendMessage(text='Hello World!'))
 
     elif any(x in message for x in ["幾歲", "年紀", "年齡","貴庚"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "五十歲！！"))   
@@ -70,17 +71,17 @@ def handle_message(event):
     elif any(x in message for x in ["你是誰", "你叫什麼", "名字","哪位"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "你好~ 我是蛋糕！"),StickerSendMessage(package_id = '3', sticker_id = '124')] )      
     
-    elif any(x in message for x in ["Ines", "ines", "白庭安"]):
-        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "Ines在拍孤兒怨續集喔！"),ImageSendMessage(original_content_url='https://i.imgur.com/lIZYmaX.png',
-    preview_image_url='https://i.imgur.com/lIZYmaX.png')])
+    #elif any(x in message for x in ["Ines", "ines", "白庭安"]):
+    #    line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "Ines在拍孤兒怨續集喔！"),ImageSendMessage(original_content_url='https://i.imgur.com/lIZYmaX.png',
+    #preview_image_url='https://i.imgur.com/lIZYmaX.png')])
     
-    elif any(x in message for x in ["Daniel", "daniel", "郭道儒"]):
-        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "Daniel在賣手錶喔！"),ImageSendMessage(original_content_url='https://cc.tvbs.com.tw/news3.0/tvbs/news/entertainment/images/2015/11/06/2.jpg?__scale=h:441,w:662,cx:3,cy:0,ch:437,cw:659',
-    preview_image_url='https://cc.tvbs.com.tw/news3.0/tvbs/news/entertainment/images/2015/11/06/2.jpg?__scale=h:441,w:662,cx:3,cy:0,ch:437,cw:659')])
+    #elif any(x in message for x in ["Daniel", "daniel", "郭道儒"]):
+    #    line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "Daniel在賣手錶喔！"),ImageSendMessage(original_content_url='https://cc.tvbs.com.tw/news3.0/tvbs/news/entertainment/images/2015/11/06/2.jpg?__scale=h:441,w:662,cx:3,cy:0,ch:437,cw:659',
+    #preview_image_url='https://cc.tvbs.com.tw/news3.0/tvbs/news/entertainment/images/2015/11/06/2.jpg?__scale=h:441,w:662,cx:3,cy:0,ch:437,cw:659')])
     
-    elif any(x in message for x in ["Lawrence", "lawrence", "羅倫斯"]):
-        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "Lawrence在佛羅倫斯喔"),ImageSendMessage(original_content_url='https://img.appledaily.com.tw/images/ReNews/20150622/640_a31496282a31c58a46c19028b9a28ed7.jpg',
-    preview_image_url='https://img.appledaily.com.tw/images/ReNews/20150622/640_a31496282a31c58a46c19028b9a28ed7.jpg')])    
+    #elif any(x in message for x in ["Lawrence", "lawrence", "羅倫斯"]):
+    #    line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "Lawrence在佛羅倫斯喔"),ImageSendMessage(original_content_url='https://img.appledaily.com.tw/images/ReNews/20150622/640_a31496282a31c58a46c19028b9a28ed7.jpg',
+    #preview_image_url='https://img.appledaily.com.tw/images/ReNews/20150622/640_a31496282a31c58a46c19028b9a28ed7.jpg')])    
     
     elif any(x in message for x in ["你好", "妳好", "嗨", "安安"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你好!" + " 要來參加 Appreciation Day 活動喔～"),StickerSendMessage(package_id = '3', sticker_id = '134')])
