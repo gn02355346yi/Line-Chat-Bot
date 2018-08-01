@@ -52,12 +52,12 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "五十歲！！"))    
 
     elif any(x in message for x in ["細節", "活動內容"]):
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "8/10 中午12點, 地點在9樓, 準備空空的肚子跟滿滿的活力就可以囉！"))        
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "8/10 中午12點, 地點在9樓, 有抽獎，遊戲跟美食喔！"))        
 
-    elif any(x in message for x in ["誰辦", "主辦","主持", "mc"]):
-        line_bot_api.reply_message(event.reply_token, [ImageSendMessage(original_content_url='https://i.imgur.com/lIZYmaX.png',
-    preview_image_url='https://i.imgur.com/lIZYmaX.png'),ImageSendMessage(original_content_url='https://cc.tvbs.com.tw/news3.0/tvbs/news/entertainment/images/2015/11/06/2.jpg?__scale=h:441,w:662,cx:3,cy:0,ch:437,cw:659',
-    preview_image_url='https://cc.tvbs.com.tw/news3.0/tvbs/news/entertainment/images/2015/11/06/2.jpg?__scale=h:441,w:662,cx:3,cy:0,ch:437,cw:659')])
+    #elif any(x in message for x in ["誰辦", "主辦","主持", "mc"]):
+    #    line_bot_api.reply_message(event.reply_token, [ImageSendMessage(original_content_url='https://i.imgur.com/lIZYmaX.png',
+    #preview_image_url='https://i.imgur.com/lIZYmaX.png'),ImageSendMessage(original_content_url='https://cc.tvbs.com.tw/news3.0/tvbs/news/entertainment/images/2015/11/06/2.jpg?__scale=h:441,w:662,cx:3,cy:0,ch:437,cw:659',
+    #preview_image_url='https://cc.tvbs.com.tw/news3.0/tvbs/news/entertainment/images/2015/11/06/2.jpg?__scale=h:441,w:662,cx:3,cy:0,ch:437,cw:659')])
 
     elif any(x in message for x in ["多久", "到幾點", "結束"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "大約兩小時喔！")) 
@@ -81,9 +81,9 @@ def handle_message(event):
     #    line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "Ines在拍孤兒怨續集喔！"),ImageSendMessage(original_content_url='https://i.imgur.com/lIZYmaX.png',
     #preview_image_url='https://i.imgur.com/lIZYmaX.png')])
     
-    elif any(x in message for x in ["Daniel", "daniel", "郭道儒"]):
-        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "Daniel再見！ CB Credit第一帥換我當了吧！"),ImageSendMessage(original_content_url='https://cc.tvbs.com.tw/news3.0/tvbs/news/entertainment/images/2015/11/06/2.jpg?__scale=h:441,w:662,cx:3,cy:0,ch:437,cw:659',
-    preview_image_url='https://cc.tvbs.com.tw/news3.0/tvbs/news/entertainment/images/2015/11/06/2.jpg?__scale=h:441,w:662,cx:3,cy:0,ch:437,cw:659')])
+    #elif any(x in message for x in ["Daniel", "daniel", "郭道儒"]):
+    #    line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "Daniel再見！ CB Credit第一帥換我當了吧！"),ImageSendMessage(original_content_url='https://cc.tvbs.com.tw/news3.0/tvbs/news/entertainment/images/2015/11/06/2.jpg?__scale=h:441,w:662,cx:3,cy:0,ch:437,cw:659',
+    #preview_image_url='https://cc.tvbs.com.tw/news3.0/tvbs/news/entertainment/images/2015/11/06/2.jpg?__scale=h:441,w:662,cx:3,cy:0,ch:437,cw:659')])
     
     #elif any(x in message for x in ["Lawrence", "lawrence", "羅倫斯"]):
     #    line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "Lawrence在佛羅倫斯喔"),ImageSendMessage(original_content_url='https://img.appledaily.com.tw/images/ReNews/20150622/640_a31496282a31c58a46c19028b9a28ed7.jpg',
@@ -102,7 +102,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你才是"),StickerSendMessage(package_id = '3', sticker_id = '134')])
 
     elif any(x in message for x in ["吃蛋糕"]):
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "你好殘忍！！"))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "你好殘忍TT 要吃我！！"))
 
     elif any(x in message for x in ["size", "口味","大小"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "我是班蘭葉口味的，綠綠的，大概6吋，你有吃過嗎？？"))
@@ -110,12 +110,18 @@ def handle_message(event):
     elif any(x in message for x in ["Piece of cake", "piece of cake", "Piece of Cake"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "我叫 Piece of Cake 因為大家很厲害，工作都是Piece of Cake!!"))
 
-    elif any(x in message for x in ["錯了"]):
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "對不起，窩歪鍋仁，中文不好")) 
+    #elif any(x in message for x in ["錯了"]):
+    #    line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "對不起，窩歪鍋仁，中文不好")) 
 
-    elif any(x in message for x in ["班蘭葉","斑蘭葉"]):
-        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "請看！"),ImageSendMessage(original_content_url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBu-7wlu1WqnfQQFmfwHMRY0Y21mihjcx18-cXGNWMpx_sI7cr',
-    preview_image_url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBu-7wlu1WqnfQQFmfwHMRY0Y21mihjcx18-cXGNWMpx_sI7cr')])
+    #elif any(x in message for x in ["班蘭葉","斑蘭葉"]):
+    #    line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "請看！"),ImageSendMessage(original_content_url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBu-7wlu1WqnfQQFmfwHMRY0Y21mihjcx18-cXGNWMpx_sI7cr',
+    #preview_image_url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBu-7wlu1WqnfQQFmfwHMRY0Y21mihjcx18-cXGNWMpx_sI7cr')])
+
+    elif message == "小蛋糕出第一題吧":
+        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "第一次互動猜題開始囉，第一個答對的朋友我會幫你偷偷多放一張抽獎券嘿嘿～ 題目是: 公雞生病了，誰來照顧呢？"),TextSendMessage(text = "想跟我玩的要加我好友我才會回答你喔，名額有限(因為我是免費版的TT)！！")])
+
+    elif any(x in message for x in ["姑姑","姑姑顧"]):
+        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "姑姑顧~ " + profile.display_name + " 你答對了！！得獎機率大概多了1%，開心吧哈哈"),TextSendMessage(text = "===========================活動截止==========================="))
 
     elif message in gag:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = gag[message])) 
