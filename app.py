@@ -50,6 +50,10 @@ def handle_message(event):
     #    line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "大家好，我是Piece of cake！ 一年一度的Appreciation Day即將要登場囉，感謝你們邀請我當特別嘉賓！！ 我是不隨便跟陌生人講話的，想跟我說話要先跟我變成好友喔~ "))
     #    line_bot_api.push_message(event.source.group_id, [TextSendMessage(text='在這一個禮拜中，我會不定期的和大家進行互動，與我更合拍的人會有神秘的好康喔！'),StickerSendMessage(package_id = '3', sticker_id = '425')])
 
+    elif message == "小蛋糕活動開始！！":
+        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "每日一次的互動猜題開始囉，第一個答對的朋友我會幫你偷偷多放一張抽獎券嘿嘿～                   題目是: 公雞生病了，誰來照顧呢？                 快來搶答吧！！"),TextSendMessage(text = "想跟我玩的要加我好友我才會回答你喔，名額有限(因為我是免費版的TT)！！")])
+
+    
     elif any(x in message for x in ["幾歲", "年紀", "年齡","貴庚"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "五十歲！！"))    
 
@@ -119,9 +123,7 @@ def handle_message(event):
     #    line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "請看！"),ImageSendMessage(original_content_url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBu-7wlu1WqnfQQFmfwHMRY0Y21mihjcx18-cXGNWMpx_sI7cr',
     #preview_image_url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBu-7wlu1WqnfQQFmfwHMRY0Y21mihjcx18-cXGNWMpx_sI7cr')])
 
-    elif message == "小蛋糕活動開始！！":
-        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "每日一次的互動猜題開始囉，第一個答對的朋友我會幫你偷偷多放一張抽獎券嘿嘿～                   題目是: 公雞生病了，誰來照顧呢？                 快來搶答吧！！"),TextSendMessage(text = "想跟我玩的要加我好友我才會回答你喔，名額有限(因為我是免費版的TT)！！")])
-
+    
     elif any(x in message for x in ["姑姑","姑姑顧"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "A: 姑姑顧~ " + profile.display_name + " 你答對了！！得獎機率大概多了1%，開心吧哈哈"),TextSendMessage(text = "===================停止作答明天再來～=================")])
 
