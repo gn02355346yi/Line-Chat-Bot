@@ -40,6 +40,8 @@ def handle_message(event):
     ID = event.source.user_id
     profile = line_bot_api.get_profile(ID)
     print(event.source.group_id)
+    print(ID)
+    print(profile)
 
     if any(x in message for x in ["地點", "哪裡", "住哪","在哪"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "在九樓喔！"))
