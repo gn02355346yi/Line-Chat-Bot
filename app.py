@@ -110,18 +110,21 @@ def handle_message(event):
     elif any(x in message for x in ["Piece of cake", "piece of cake", "Piece of Cake"]):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "我叫 Piece of Cake 因為大家很厲害，工作都是Piece of Cake!!"))
 
-    #elif any(x in message for x in ["錯了"]):
-    #    line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "對不起，窩歪鍋仁，中文不好")) 
+    elif any(x in message for x in ["錯了"]):
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "對不起，窩歪鍋仁，中文不好")) 
 
     #elif any(x in message for x in ["班蘭葉","斑蘭葉"]):
     #    line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "請看！"),ImageSendMessage(original_content_url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBu-7wlu1WqnfQQFmfwHMRY0Y21mihjcx18-cXGNWMpx_sI7cr',
     #preview_image_url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBu-7wlu1WqnfQQFmfwHMRY0Y21mihjcx18-cXGNWMpx_sI7cr')])
 
     elif message == "小蛋糕出第一題吧":
-        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "第一次互動猜題開始囉，第一個答對的朋友我會幫你偷偷多放一張抽獎券嘿嘿～                   題目是: 公雞生病了，誰來照顧呢？"),TextSendMessage(text = "想跟我玩的要加我好友我才會回答你喔，名額有限(因為我是免費版的TT)！！")])
+        line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "今天互動猜題開始囉，第一個答對的朋友我會幫你偷偷多放一張抽獎券嘿嘿～                   題目是: 公雞生病了，誰來照顧呢？"),TextSendMessage(text = "想跟我玩的要加我好友我才會回答你喔，名額有限(因為我是免費版的TT)！！")])
 
     elif any(x in message for x in ["姑姑","姑姑顧"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "姑姑顧~ " + profile.display_name + " 你答對了！！得獎機率大概多了1%，開心吧哈哈"),TextSendMessage(text = "===================活動截止明天再來=================")])
+
+    elif any(x in message for x in ["幾歲", "年紀", "年齡","貴庚"]):
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text = "五十歲！！"))
 
     elif message in gag:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text = gag[message])) 
