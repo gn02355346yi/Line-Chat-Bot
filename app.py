@@ -98,7 +98,7 @@ def handle_message(event):
     elif any(x in message for x in ["要幹嘛", "內容", "活動"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = "吃吃喝喝有吃有拿喔！ 還有Intern們拍的精彩影片～"),StickerSendMessage(package_id = '3', sticker_id = '134')])
     
-    elif any(x in message for x in ["笨", "傻", "奇怪", "蠢"]):
+    elif any(x in message for x in ["笨", "傻", "蠢"]):
         line_bot_api.reply_message(event.reply_token, [TextSendMessage(text = profile.display_name + "你才是"),StickerSendMessage(package_id = '3', sticker_id = '134')])
 
     elif any(x in message for x in ["吃蛋糕"]):
